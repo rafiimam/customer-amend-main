@@ -196,7 +196,8 @@ const AmendCustomerButton = () => {
 
     const fetchToken = async () => {
         try {
-            const tokenApiUrl = 'http://172.30.30.122:1010/v7/token';
+            const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/';
+            const tokenApiUrl = `${corsAnywhereUrl}http://172.30.30.122:1010/v7/token`;
             const headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
             };
@@ -208,8 +209,9 @@ const AmendCustomerButton = () => {
                 grant_type: 'password',
                 amount: 0,
             });
-
             const response = await axios.post(tokenApiUrl, body, { headers });
+
+            //const response = await axios.post(tokenApiUrl, body, { headers });
             const token = response.data.access_token;
             setLoading(false);
 
