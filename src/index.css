@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+
+body {
+    margin-top: 10px;
+    margin-left: 20px;
+    font-family:'Noto Serif', serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #F1F6F4;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.header{
+    background-color: rgb(103, 169, 255);
+    margin-top: -30px;
+    margin-left: -20px;
+    margin-right: -10px;
+}
+.custNum{
+    margin-left:30px;
+}
+
+.enquireBtn{
+    font-size:8px;
+    display:inline-block;
+    color:white;
+    background-color:dodgerblue;
+    margin-bottom:6px;
+    margin-left:20px;
+    height: 18px;
+    border-radius:5px;
+    font-weight:bold;
+    border:none;
+
+}
+    .enquireBtn:hover {
+        color: dodgerblue;
+        background-color: white;
+        cursor: pointer;
+    }
+
+.amendBtn {
+    color: white;
+    background-color: dodgerblue;
+    margin-top: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+}
+
+    .amendBtn:hover {
+        color: dodgerblue;
+        background-color: white;
+        cursor: pointer;
+    }
+
+label {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.box {
+    font-size: 13px;
+    font-weight:bold;
+}
+
+input {
+    width: 200px;
+    height: 13px;
+    font-size: 11px;
+}
+
+.value {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+select {
+    width: 200px;
+    font-size: 12px;
+    height: 15px;
+}
+.title{
+    font-size:20px;
+    color:darkblue;
+    margin-bottom:50px;
+}
+.required, textarea, select {
+    background-color: #bdd9ff;
+    border: 2px;
+    border-color:dodgerblue;
+    height:15px;
+}
+
+.info {
+    display: block;
+    margin-right: auto;
+    background-color: #F1F6F4;
+    border: 1px solid rgb(103, 169, 255);;
+    padding: 10px;
+    box-shadow: gray 10px 10px 20px;
+    border-radius: 5px;
+    margin-left:auto;
+    width: 90%;
+}
+
+@keyframes bouncing-loader {
+    to {
+      opacity: 0.1;
+      transform: translate3d(0, -16px, 0);
+    }
+  }
+  
+  .bouncing-loader {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 240px;
+  }
+  
+  .bouncing-loader > div {
+    width: 16px;
+    height: 16px;
+    margin: 3rem 0.2rem;
+    background: #70aeff;
+    border-radius: 50%;
+    animation: bouncing-loader 0.6s infinite alternate;
+  }
+  
+  .bouncing-loader > div:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .bouncing-loader > div:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  .logo{
+    padding-top: 30px;
+    display: block;
+    margin-left: auto ;
+    margin-right: auto;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    justify-items: center;
+    width: 20%;
+    height: 10%;
+  }
+
+  .permanentAddress{
+    padding-left: 50px;
+  }
