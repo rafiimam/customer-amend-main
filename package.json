@@ -30,6 +30,8 @@
   },
   "scripts": {
     "start": "craco start",
+    "predeploy" : "npm run build",
+    "deploy" : "gh-pages -d build",
     "build": "craco build",
     "test": "craco test",
     "serve": "serve -s build",
@@ -59,6 +61,7 @@
   "devDependencies": {
     "@craco/craco": "^7.1.0",
     "customize-cra": "^1.0.0",
+    "gh-pages": "^6.1.1",
     "node-polyfill-webpack-plugin": "^3.0.0",
     "react-app-rewired": "^2.2.1",
     "timers-browserify": "^2.0.12"
