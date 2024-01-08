@@ -123,8 +123,7 @@ const AmendCustomerButton = () => {
 
     const fetchCustomerDetails = async (custNumber) => {
         try {
-            const corsAnywhereUrl = 'http://localhost:8080/';
-            const tokenApiUrl = `${corsAnywhereUrl}http://172.30.30.122:1010/v7/token`;
+            const tokenApiUrl = 'http://172.30.30.122:1010/v7/token';
             const headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
             };

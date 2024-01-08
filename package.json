@@ -13,6 +13,7 @@
     "buffer": "^6.0.3",
     "cors-anywhere": "^0.4.4",
     "express": "^4.18.2",
+    "heroku": "^8.7.1",
     "http-proxy-middleware": "^2.0.6",
     "node-libs-browser": "^2.2.1",
     "react": "^18.2.0",
@@ -30,8 +31,8 @@
   },
   "scripts": {
     "start": "craco start",
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "craco build",
     "test": "craco test",
     "serve": "serve -s build",
