@@ -188,7 +188,6 @@ const AmendCustomerButton = () => {
                 setSuccessMessage('');
                 setErrorMessage('');
             }, 5000);
-            // Set the default values obtained from the API to the state
         } catch (error) {
             console.error('Error fetching default values:', error);
         }
@@ -210,11 +209,9 @@ const AmendCustomerButton = () => {
             });
             const response = await axios.post(tokenApiUrl, body, { headers });
 
-            //const response = await axios.post(tokenApiUrl, body, { headers });
             const token = response.data.access_token;
             setLoading(false);
 
-            //fetchDefaultValues('100011019851', token);
         } catch (error) {
             console.error('Error fetching token:', error);
             setLoading(false);
@@ -222,7 +219,6 @@ const AmendCustomerButton = () => {
     };
 
     useEffect(() => {
-        // Fetch token when the component mounts
         fetchToken();
         
     }, []);
@@ -230,7 +226,6 @@ const AmendCustomerButton = () => {
     const handleAmendClick = async () => {
         try {
             const isFormDataEdited = Object.values(formData).some(value => value !== '');
-            // Construct XML data from form data
             if (isFormDataEdited) {
                 const xmlData = `<?xml version="1.0" encoding="utf-8"?>
             <Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
@@ -257,39 +252,30 @@ const AmendCustomerButton = () => {
                 </Body>
             </Envelope>`;
 
-                // API endpoint
                 const apiUrl = '/AmendCustomer/AmendCustomerInterfaceHttpService';
 
-                // Headers for the SOAP request
                 const headers = {
                     'Content-Type': 'text/xml',
                 };
 
-                // Make the SOAP request using axios
                 const response = await axios.post(apiUrl, xmlData, { headers });
                 const formattedXmlResponse = xmlFormatter(response.data, { indentation: '    ' });
 
-                // Log the formatted XML response in the console
                 console.log('Formatted XML Response:', formattedXmlResponse);
 
-                // Parse the XML response to JS object
                 if (response.status < 200 || response.status >= 300) {
                     setErrorMessage('Something went wrong. Please try again later.');
                     console.error('API Error - Status:', response.status, 'Data:', response.data);
                 } else {
-                    // Parse the XML response to JS object
                     const parser = new xml2js.Parser({ explicitArray: false });
                     parser.parseString(response.data, (error, result) => {
                         if (error) {
                             console.error('XML Parsing Error:', error);
                         } else {
-                            // Log the entire result object
                             console.log('Entire Result Object:', result);
 
-                            // Navigate through SOAP envelope to access the response
                             const amendCustomerResponse = result['soap:Envelope']['soap:Body']['ns3:amendCustomerResponse'];
                             if (amendCustomerResponse && amendCustomerResponse.CustModRs) {
-                                // Log the parsed response in the console
                                 setSuccessMessage('User information updated successfully.');
                                 console.log('API Response:', amendCustomerResponse.CustModRs);
                             } else {
