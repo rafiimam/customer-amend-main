@@ -24,5 +24,15 @@ module.exports = function (app) {
             onProxyRes: function (proxyRes, req, res) {
                 proxyRes.headers['Access-Control-Allow-Origin'] = '*';}
         })
-    )
+    );
+    app.use(
+        createProxyMiddleware('/v7', {
+            target: 'http://172.30.30.122:1010',
+            changeOrigin: true,
+            secure: false,
+            onProxyRes: function (proxyRes, req, res) {
+                proxyRes.headers['Access-Control-Allow-Origin'] = '*';
+            },
+        })
+    );
 };

@@ -195,7 +195,7 @@ const AmendCustomerButton = () => {
 
     const fetchToken = async () => {
         try {
-            const tokenApiUrl = 'http://172.30.30.122:1010/v7/token';
+            const tokenApiUrl = '/v7/token';
             const headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
             };
