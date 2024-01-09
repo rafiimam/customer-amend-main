@@ -123,8 +123,8 @@ const AmendCustomerButton = () => {
 
     const fetchCustomerDetails = async (custNumber) => {
         try {
-            const tokenApiUrl = process.env.REACT_APP_TOKEN_API_URL;
-            //const tokenApiUrl = '/v7/token';
+            //const tokenApiUrl = process.env.REACT_APP_TOKEN_API_URL;
+            const tokenApiUrl = '/v7/token';
             const headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
             };
@@ -150,8 +150,8 @@ const AmendCustomerButton = () => {
 
     const fetchDefaultValues = async (custNumber, token) => {
         try {
-            const apiUrl = process.env.REACT_APP_ENQUIRE_CUSTOMER_API_URL;
-            //const apiUrl = '/Playground/v7/Customer/EnquireCustomer'
+            //const apiUrl = process.env.REACT_APP_ENQUIRE_CUSTOMER_API_URL;
+            const apiUrl = '/Playground/v7/Customer/EnquireCustomer'
             const headers = {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${token}`,
@@ -196,8 +196,8 @@ const AmendCustomerButton = () => {
 
     const fetchToken = async () => {
         try {
-            const tokenApiUrl = process.env.REACT_APP_TOKEN_API_URL;
-            //const tokenApiUrl = '/v7/token';
+            //const tokenApiUrl = process.env.REACT_APP_TOKEN_API_URL;
+            const tokenApiUrl = '/v7/token';
             const headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
             };
@@ -254,8 +254,8 @@ const AmendCustomerButton = () => {
                 </Body>
             </Envelope>`;
                 
-                const apiUrl = process.env.REACT_APP_AMEND_CUSTOMER_API_URL;
-                //const apiUrl = '/AmendCustomer/AmendCustomerInterfaceHttpService';
+                //const apiUrl = process.env.REACT_APP_AMEND_CUSTOMER_API_URL; 
+                const apiUrl = '/AmendCustomer/AmendCustomerInterfaceHttpService';
 
                 const headers = {
                     'Content-Type': 'text/xml',
