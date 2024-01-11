@@ -1,9 +1,8 @@
 {
-  "name": "react-soap-api-demo",
+  "name": "customer-amend-main",
   "version": "0.1.0",
   "homepage": ".",
   "private": true,
-  "proxy": "http://172.30.30.119:7788",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

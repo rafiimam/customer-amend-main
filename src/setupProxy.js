@@ -38,6 +38,8 @@ module.exports = function (app) {
 };
 */}
 
+
+ 
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 module.exports = function (app) {
@@ -137,4 +139,22 @@ module.exports = function (app) {
         })
     );
 };
+*/}
+
+
+
+{/** const express = require("express");
+const app = express();
+const cors = require("cors");
+app.use(
+    cors({
+        origin: "http://172.30.30.122:1010",
+    })
+)
+
+app.get("/data",(req,res)=>{
+    res.json({name: "Kyle", favouriteFood:"RIce"})
+})
+
+app.listen(3000)
 */}

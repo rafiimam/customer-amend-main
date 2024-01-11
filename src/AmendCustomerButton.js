@@ -124,7 +124,7 @@ const AmendCustomerButton = () => {
     const fetchCustomerDetails = async (custNumber) => {
         try {
             //const tokenApiUrl = process.env.REACT_APP_TOKEN_API_URL;
-            const tokenApiUrl = '/v7/token';
+            const tokenApiUrl = 'http://172.30.30.122:1010/v7/token';
             const headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
             };
@@ -151,9 +151,11 @@ const AmendCustomerButton = () => {
     const fetchDefaultValues = async (custNumber, token) => {
         try {
             //const apiUrl = process.env.REACT_APP_ENQUIRE_CUSTOMER_API_URL;
-            const apiUrl = '/Playground/v7/Customer/EnquireCustomer'
+            const apiUrl = 'http://172.30.30.119:7788/Playground/v7/Customer/EnquireCustomer';
+            //const apiUrl = '/Playground/v7/Customer/EnquireCustomer';
             const headers = {
                 'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
                 Authorization: `Bearer ${token}`,
             };
             const body = {
@@ -165,7 +167,7 @@ const AmendCustomerButton = () => {
             const response = await axios.post(apiUrl, body, { headers });
             console.log('Response:', response.data); 
 
-            const data = response.data;
+             const data = response.data;
 
             if (data && data.Data && data.Data.CustInqData) {
                 const custInqData = data.Data.CustInqData;
@@ -197,7 +199,7 @@ const AmendCustomerButton = () => {
     const fetchToken = async () => {
         try {
             //const tokenApiUrl = process.env.REACT_APP_TOKEN_API_URL;
-            const tokenApiUrl = '/v7/token';
+            const tokenApiUrl = 'http://172.30.30.122:1010/v7/token';
             const headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
             };
@@ -212,6 +214,7 @@ const AmendCustomerButton = () => {
             const response = await axios.post(tokenApiUrl, body, { headers });
 
             const token = response.data.access_token;
+            console.log('generated token: ',token);
             setLoading(false);
 
         } catch (error) {
@@ -255,7 +258,8 @@ const AmendCustomerButton = () => {
             </Envelope>`;
                 
                 //const apiUrl = process.env.REACT_APP_AMEND_CUSTOMER_API_URL; 
-                const apiUrl = '/AmendCustomer/AmendCustomerInterfaceHttpService';
+                const apiUrl = 'https://172.28.201.5:9430/AmendCustomer/AmendCustomerInterfaceHttpService';
+                //const apiUrl = '/AmendCustomer/AmendCustomerInterfaceHttpService';
 
                 const headers = {
                     'Content-Type': 'text/xml',
@@ -305,8 +309,9 @@ const AmendCustomerButton = () => {
         }
     };
 
+
     return (
-        <div>
+         <div>
 
 {successMessage && (
                 <p style={{ color: 'green', textAlign: 'center' }}>{successMessage}</p>
@@ -382,6 +387,6 @@ const AmendCustomerButton = () => {
         </div>
         
     );
-};
+}; 
 
 export default AmendCustomerButton;

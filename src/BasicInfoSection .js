@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import 'animate.css';
-import DatePicker from "react-date-picker";
+//import DatePicker from "react-date-picker";
 
 const BasicInfoSection = ({ formData, defaultValues, handleInputChange }) => {
   const [isSectionOpen, setIsSectionOpen] = useState(true);
